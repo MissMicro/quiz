@@ -3,10 +3,12 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/dist/script.js" />
+        <item url="file://$PROJECT_DIR$/dist/temp.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/dist/script.js" />
+      <root url="file://$PROJECT_DIR$/dist/temp.js" />
     </CLASSES>
     <SOURCES />
   </library>
