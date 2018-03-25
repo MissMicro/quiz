@@ -15,7 +15,7 @@ var toShow = [1];
 function showQuestions(jsonObj) {
 
     var allQuestions = jsonObj['general'];
-
+    var a = 0;
     for (var i = 0; i < allQuestions.length; i++) {
         var qest = document.createElement('h3');
 
