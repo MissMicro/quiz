@@ -1,0 +1,68 @@
+{
+        "general": [
+             {
+                "question": "Podaj naważniejsze potrzeby konia wynikające z jego natury.",
+                "options": [
+                    "potrzeba ruchu",
+                    "częste pobieranie niewielkich porcji paszy",
+                    "swiatlo",
+                    "powietrze",
+                    "odpowiednia temperatura",
+                    "treningi skokowe"
+                ],
+                "answer": "potrzeba ruchu, częste pobieranie niewielkich porcji paszy, swiatlo"
+            },
+            {
+                "question": "W jaki sposób odżywiają się konie w naturalych warunkach?",
+                "options": [
+                    "koń żywi się małymi porcjami w ciągu całego dnia",
+                    "konie jedzą trzy obfite porcje dziennie",
+                    "każdy koń spożywa na swój sposób, nie można okreslić generalnej zasady"
+
+                ],
+                "answer": "koń żywi się małymi porcjami w ciągu całego dnia"
+            },
+            {
+                "question": "Czy konie w naturalnych warunkach żyją samotnie czy w stadach?",
+                "options": [
+                    "w naturalnych warunkach konie żyją w stadach o scisle okreslonej hierarchii",
+                    "konie żyją w stadach ale odłączają się od nich aby zdobyć pożywienie",
+                    "w naturalnych warunkach konie żyją samotnie"
+                ],
+                "answer": "w naturalnych warunkach konie żyją w stadach o scisle okreslonej hierarchii"
+            },
+            {
+                "question": "W jaki sposób odżywiają się konie w naturalych warunkach?",
+                "options": [
+                    "koń żywi się małymi porcjami w ciągu całego dnia",
+                    "konie jedzą trzy obfite porcje dziennie",
+                    "każdy koń spożywa na swój sposób, nie można okreslić generalnej zasady"
+                 
+                ],
+                "answer": "koń żywi się małymi porcjami w ciągu całego dnia"
+            }
+
+        ],
+        "maths": {
+            "q1": {
+                "question": "5 + 7 = ?",
+                "options": [
+                    "10",
+                    "11",
+                    "12",
+                    "13"
+                ],
+                "answer": "12"
+            },
+            "q2": {
+                "question": "12 - 8 = ?",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                "answer": "4"
+            }
+        }
+}
