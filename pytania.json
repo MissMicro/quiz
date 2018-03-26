@@ -10,7 +10,11 @@
                     "odpowiednia temperatura",
                     "treningi skokowe"
                 ],
-                "answer": "potrzeba ruchu, częste pobieranie niewielkich porcji paszy, swiatlo"
+                "answer": [
+                    "potrzeba ruchu",
+                    "częste pobieranie niewielkich porcji paszy",
+                    "swiatlo"
+                ]
             },
             {
                 "question": "W jaki sposób odżywiają się konie w naturalych warunkach?",
@@ -20,7 +24,7 @@
                     "każdy koń spożywa na swój sposób, nie można okreslić generalnej zasady"
 
                 ],
-                "answer": "koń żywi się małymi porcjami w ciągu całego dnia"
+                "answer": ["koń żywi się małymi porcjami w ciągu całego dnia"]
             },
             {
                 "question": "Czy konie w naturalnych warunkach żyją samotnie czy w stadach?",
@@ -29,7 +33,7 @@
                     "konie żyją w stadach ale odłączają się od nich aby zdobyć pożywienie",
                     "w naturalnych warunkach konie żyją samotnie"
                 ],
-                "answer": "w naturalnych warunkach konie żyją w stadach o scisle okreslonej hierarchii"
+                "answer": ["w naturalnych warunkach konie żyją w stadach o scisle okreslonej hierarchii"]
             },
             {
                 "question": "W jaki sposób odżywiają się konie w naturalych warunkach?",
@@ -39,7 +43,7 @@
                     "każdy koń spożywa na swój sposób, nie można okreslić generalnej zasady"
                  
                 ],
-                "answer": "koń żywi się małymi porcjami w ciągu całego dnia"
+                "answer": ["koń żywi się małymi porcjami w ciągu całego dnia"]
             }
 
         ],

@@ -1,7 +1,5 @@
 'use strict';
 
-var questionContainer = document.querySelector('.question');
-var answersContainer = document.querySelector('.answers');
 var container;
 var nextBtn = document.querySelector('#next');
 var checkBtn = document.querySelector('#check-answer');
@@ -9,26 +7,51 @@ var checkBtn = document.querySelector('#check-answer');
 var questionsUrl = 'pytania.json';
 var requestQuestions = new XMLHttpRequest();
 
-var questionsArray = [];
-var answersArray = [];
 var toShow = [1];
+var contentArray = [];
 
-function showContent(jsonObj, type) {
+function createArray(jsonObj) {
 
-    container = document.getElementById(type);
     var allQuestions = jsonObj['general'];
 
-    for (var i = 0; i < allQuestions.length; i++) {
+    for (var r = 0; r < allQuestions.length; r++) {
+
+        var questionJSON = allQuestions[r].question;
+        var optionsJSON = allQuestions[r].options;
+        var answerJSON = allQuestions[r].answer;
+        var tempAr = [];
+        var tempAr2 = [];
+        for (var o = 0; o < optionsJSON.length; o++) {
+            tempAr.push(optionsJSON[o]);
+        }
+        for (var a = 0; a < answerJSON.length; a++) {
+            tempAr2.push(answerJSON[a]);
+        }
+
+        contentArray.push({ question: questionJSON, answers: tempAr, correct: tempAr2 });
+    }
+    console.log(contentArray);
+}
+
+function showContent(type) {
+
+    container = document.getElementById(type);
+
+    for (var i = 0; i < contentArray.length; i++) {
         if (type === 'questions') {
             var element = document.createElement('h3');
             element.setAttribute("id", "q" + i);
-            questionsArray.push("q" + i); //length of array is number of all questions
-            element.textContent = jsonObj['general'][i].question;
+            element.textContent = contentArray[i].question;
         } else if (type === 'answers') {
-            var element = document.createElement('p');
+            var element = document.createElement('div');
             element.setAttribute("id", "a" + i);
-            answersArray.push("a" + i);
-            element.textContent = jsonObj['general'][i].options;
+
+            for (var j = 0; j < contentArray[i].answers.length; j++) {
+                var element2 = document.createElement('p');
+                element2.textContent = contentArray[i].answers[j];
+                element.appendChild(element2);
+            }
+            container.appendChild(element);
         } else {
             console.log('wrong type of content!');
         }
@@ -40,12 +63,9 @@ function showContent(jsonObj, type) {
     }
 
     if (type === 'questions') {
-        for (var j = 0; j < questionsArray.length - 1; j++) {
+        for (var _j = 0; _j < contentArray.length - 1; _j++) {
             toShow.push(0);
         }
-    } else if (type === 'answers') {
-        var temp = document.querySelector('.answers-list');
-        console.log(temp);
     }
 }
 
@@ -54,11 +74,11 @@ function getNextQuestion() {
     var qElements = [];
     var aElements = [];
 
-    for (var i = 0; i < questionsArray.length; i++) {
-        qElements.push(document.getElementById(questionsArray[i]));
-        aElements.push(document.getElementById(answersArray[i]));
+    for (var i = 0; i < contentArray.length; i++) {
+        qElements.push(document.getElementById("q" + i));
+        aElements.push(document.getElementById("a" + i));
     }
-    for (var _i = 0; _i < questionsArray.length; _i++) {
+    for (var _i = 0; _i < contentArray.length; _i++) {
 
         if (toShow[_i] == 1) {
             qElements[_i].style.display = aElements[_i].style.display = 'none';
@@ -85,8 +105,9 @@ $(document).ready(function () {
 
     requestQuestions.onload = function () {
         var dataQuiz = requestQuestions.response;
-        showContent(dataQuiz, 'questions');
-        showContent(dataQuiz, 'answers');
+        createArray(dataQuiz);
+        showContent('questions');
+        showContent('answers');
     };
 
     window.onload = function () {};
